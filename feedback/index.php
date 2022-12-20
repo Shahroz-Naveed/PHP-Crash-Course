@@ -12,11 +12,7 @@ if (isset($_POST['submit'])) {
     $nameErr = 'Name is required';
   } else {
     // $name = filter_var($_POST['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $name = filter_input(
-      INPUT_POST,
-      'name',
-      FILTER_SANITIZE_FULL_SPECIAL_CHARS
-    );
+    $name = filter_input(INPUT_POST,'name',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
   }
 
   // Validate email
@@ -65,7 +61,7 @@ if (isset($_POST['submit'])) {
         <label for="name" class="form-label">Name</label>
         <input type="text" class="form-control <?php echo !$nameErr ?:
           'is-invalid'; ?>" id="name" name="name" placeholder="Enter your name" value="<?php echo $name; ?>">
-        <div id="validationServerFeedback" class="invalid-feedback">
+        <div  class="invalid-feedback">
           Please provide a valid name.
         </div>
       </div>
@@ -73,12 +69,20 @@ if (isset($_POST['submit'])) {
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control <?php echo !$emailErr ?:
           'is-invalid'; ?>" id="email" name="email" placeholder="Enter your email" value="<?php echo $email; ?>">
+          <div  class="invalid-feedback">
+          Please Write an  Email here!.
+        </div>
       </div>
+      
       <div class="mb-3">
         <label for="body" class="form-label">Feedback</label>
         <textarea class="form-control <?php echo !$bodyErr ?:
           'is-invalid'; ?>" id="body" name="body" placeholder="Enter your feedback"><?php echo $body; ?></textarea>
+            <div  class="invalid-feedback">
+          Please Write Your feedback here !.
+        </div>
       </div>
+    
       <div class="mb-3">
         <input type="submit" name="submit" value="Send" class="btn btn-dark w-100">
       </div>
