@@ -53,10 +53,10 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-    <img src="/PHP/feedback/img/logo.png" class="w-25 mb-3" alt="">
+    <img src="/PHP/feedback/img/logo2.jpeg" class="w-25 mb-3" alt="">
     <h2>Feedback</h2>
     <?php echo isset($name) ? $name : ''; ?>
-    <p class="lead text-center">Leave feedback for Traversy Media</p>
+    <p class="lead text-center">Leave feedback for IT & Social  Media Department</p>
 
     <form method="POST" action="<?php echo htmlspecialchars(
       $_SERVER['PHP_SELF']
